@@ -1,10 +1,11 @@
+#!/usr/bin/python3
 def fizzbuzz():
     for i in range(1, 101):
         if i % 3 == 0:
-            print(f"Fizz", end = " ")
+            print("Fizz", end = " ")
         elseif i % 5 == 0:
-            print(f"Buzz", end = " ")
+            print("Buzz", end = " ")
         elseif i % 15 == 0:
-            print(f"FizzBuzz", end = " ")
+            print("FizzBuzz", end = " ")
         else:
-            print(f"{i:d}", end = " ")
+            print("{:d}".format(i), end = " ")
