@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for i in range(0, 100):
-    if i % 11 == 0 or i % 10 == 0 or i > 90 or i== 21:
+    if i % 11 == 0 or i % 10 == 0 or i > 90 or i == 21:
         continue
     if (i > 80 and i < 89) or (i > 70 and i < 77):
         continue
