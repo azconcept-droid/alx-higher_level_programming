@@ -6,23 +6,22 @@
  *
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
-int check_cycle(listint_t *list)
+int check_cycle(listint_t *list __attribute__((unused)))
 {
 	listint_t *cat;
 	listint_t *rat;
 
 	if (!list || !list->next)
 		return (0);
-	rat = list->next->next;
+	rat = list;
 	cat = list;
 
-	while (cat && rat && list->next)
+	while (cat && rat && rat->next)
 	{
-		if (cat->n == rat->n)
-			return (1);
-		rat = rat->next;
 		cat = cat->next;
-		list = list->next;
+		rat = rat->next->next;
+		if (cat == rat)
+			return (1);
 	}
 	return (0);
 }
