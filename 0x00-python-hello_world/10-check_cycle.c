@@ -20,8 +20,9 @@ int check_cycle(listint_t *list)
 	{
 		if (cat->n == rat->n)
 			return (1);
-		rat = rat->next
+		rat = rat->next;
 		cat = cat->next;
+		list = list->next;
 	}
 	return (0);
 }
