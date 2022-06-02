@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-with open("myfile.txt") as f:
-    print(f.read())
+with open("Zenpy.txt") as f:
+    for zen in f:
+        print(zen, end="")
+    print()
