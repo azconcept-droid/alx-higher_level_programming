@@ -4,7 +4,7 @@ def new_in_list(my_list, idx, element):
     i = 0
     list_len = len(my_list)
 
-    if idx < 0 or idx > list_len:
+    if idx < 0 and idx >= list_len:
         return my_list
 
     while i < list_len:
@@ -14,4 +14,4 @@ def new_in_list(my_list, idx, element):
     for j in range(list_len):
         if idx == j:
             new_list[j] = element
-            return new_list
+    return new_list
