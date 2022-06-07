@@ -21,6 +21,4 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 
-void print_python_list_info(PyObject *p);
-
 #endif /* LISTS_H */
