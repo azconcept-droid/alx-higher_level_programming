@@ -60,9 +60,9 @@ class Rectangle:
             for i in range(self.__height):
                 col = ""
                 for j in range(self.__width):
-                    col += Rectangle.print_symbol
+                    col += print_symbol
                 display.append(col)
-            return "\n".join(display)<F11><F11>
+            return "\n".join(display)
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)
