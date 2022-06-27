@@ -60,7 +60,7 @@ class Rectangle:
             for i in range(self.__height):
                 col = ""
                 for j in range(self.__width):
-                    col += print_symbol
+                    col += Rectangle.print_symbol
                 display.append(col)
             return "\n".join(display)
 
