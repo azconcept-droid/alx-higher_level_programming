@@ -9,9 +9,9 @@ class TestMaxInteger(unittest.TestCase):
     """Test max integer"""
 
     def test_type(self):
-        l =  ["a", 1, 5, "z", 29]
+        lists =  ["a", 1, 5, "z", 29]
         self.assertRaises(TypeError, max_integer, (1, 4, 6, 8, 9))
-        self.assertRaises(ValueError, max_integer, l)
+        self.assertRaises(ValueError, max_integer, lists)
         
     def test_list(self):
         self.assertEqual(max_integer([1, 4, 7, 8]), 8)
