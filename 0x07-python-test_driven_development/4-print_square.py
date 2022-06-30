@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Prints a square 
+Prints a square
 """
 
 
@@ -10,7 +10,7 @@ def print_square(size):
         Args:
             size (int): size of the square
         Returns:
-            Prints square with the character # 
+            Prints square with the character #
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
