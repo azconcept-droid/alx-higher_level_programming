@@ -2,11 +2,14 @@
 """Defines Matrix multiplication using long method"""
 
 
-def lazy_matrix_mul(m_a, m_b):
-    """Returns multiplication 2 matrices using long method
+def matrix_mul(m_a, m_b):
+    """Multiplication 2 matrices using long method
     Args:
         m_a (list of lists of (int/floats)): left hand matrix.
         m_b (list of lists of (int/floats)): right hand matrix.
+
+    Returns:
+        A new matrix representing the multiplication of m_a by m_b.
     """
 
     if m_a == [] or m_a == [[]]:
