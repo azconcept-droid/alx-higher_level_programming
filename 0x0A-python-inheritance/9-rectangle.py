@@ -26,6 +26,6 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """Print object to stdout"""
 
-        display_rect = "[" + self.__class__.__name__ + "]"
-        display_rect += " " + str(self.__width) + "/" + str(self.__height)
-        return display_rect
+        display_obj = "[" + self.__class__.__name__ + "]"
+        display_obj += " " + str(self.__width) + "/" + str(self.__height)
+        return display_obj
