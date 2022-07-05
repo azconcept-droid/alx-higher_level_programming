@@ -27,7 +27,8 @@ At the end of this project, you are expected to be able to explain to anyone, **
 - What is deserialization
 - How to convert a Python data structure to a JSON string
 - How to convert a JSON string to a Python data structure
-Copyright - Plagiarism
+
+**Copyright - Plagiarism**
 You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
 You are not allowed to publish any content of this project.
