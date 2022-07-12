@@ -110,7 +110,9 @@ class Rectangle(Base):
         if y is not None:
             self.__y = y
 
-    def update(self, *args):
+    def update(self, *args, **kargs):
         """Docs"""
         if args:
             self.help_update(*args)
+        else:
+            self.help_update(**kargs)
