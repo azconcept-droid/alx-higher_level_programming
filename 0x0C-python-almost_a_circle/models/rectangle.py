@@ -111,7 +111,12 @@ class Rectangle(Base):
             self.__y = y
 
     def update(self, *args, **kargs):
-        """Docs"""
+        """Update arguments
+
+        Args:
+            *args (non-keyworded): 
+            **kargs (keyworded):
+        """
         if args:
             self.help_update(*args)
         else:
