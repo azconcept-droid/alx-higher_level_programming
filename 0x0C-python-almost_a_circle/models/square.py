@@ -10,11 +10,12 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Docs"""
         super().__init__(size, size, x, y, id)
+        self.__size = size
 
     @property
     def size(self):
         """Get size of the square."""
-        return self.width
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -23,12 +24,11 @@ class Square(Rectangle):
             value (int): value of size
         """
         self.integers_validator("width", value)
-        self.__width = value
-        self.__height = value
+        self.__size = value
 
     def __str__(self):
         return '[{}] ({}) {}/{} - {}' \
-        .format(type(self).__name__, self.id, self.x, self.y, self.width)
+        .format(type(self).__name__, self.id, self.x, self.y, self.__size)
 
     def help_update(self, id=None, size=None, x=None, y=None):
         """Internal method that help update method"""
@@ -37,9 +37,9 @@ class Square(Rectangle):
         if size is not None:
             self.__size = size
         if x is not None:
-            self.__x = x
+            self.x = x
         if y is not None:
-            self.__y = y
+            self.y = y
 
     def update(self, *args, **kargs):
         """Update arguments
@@ -50,5 +50,5 @@ class Square(Rectangle):
         """
         if args:
             self.help_update(*args)
-        else:
+        elif kargs:
             self.help_update(**kargs)
