@@ -23,12 +23,8 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Docs"""
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-        else:
-            self.__width = value
+        self.integers_validator("width", value)
+        self.__width = value
 
     @property
     def height(self):
@@ -38,12 +34,8 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Docs"""
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        elif value <= 0:
-            raise ValueError("height must be > 0")
-        else:
-            self.__height = value
+        self.integers_validator("height", value)
+        self.__height = value
 
     @property
     def x(self):
@@ -53,12 +45,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Docs"""
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        elif value < 0:
-            raise ValueError("x must be >= 0")
-        else:
-            self.__x = value
+        self.integers_validator("x", value)
+        self.__x = value
 
     @property
     def y(self):
@@ -68,12 +56,21 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Docs"""
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
+        self.integers_validator("y", value)
+        self.__y = value
+
+    def integers_validator(self, name, value):
+        """Helper function that validates integers
+            Args:
+                name (str): name of parameter
+                value (int): value of parameter
+        """
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if name=="height" or name=="width" and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
         elif value < 0:
-            raise ValueError("y must be >= 0")
-        else:
-            self.__y = value
+            raise ValueError("{} must be >= 0".format(name))
 
     def area(self):
         """Docs"""
@@ -95,7 +92,7 @@ class Rectangle(Base):
         print_id = " ("+str(self.id)+") "
         print_pos = str(self.__x)+"/"+str(self.__y)
         print_dim = " - "+str(self.__width)+"/"+str(self.__height)
-        return "[Rectangle]"+print_id+print_pos+print_dim
+        return "[{}]".format(type(self).__name__)+print_id+print_pos+print_dim
 
     def help_update(self, id=None, width=None, height=None, x=None, y=None):
         """Internal method that help update method"""
