@@ -1,14 +1,21 @@
 #!/usr/bin/python3
-"""Docs"""
+"""Rectangle class module"""
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Docs"""
+    """lass Rectangle that inherits from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Docs"""
+        """Initialize nes rectangle
+        Args:
+            width (int): width of rectangle
+            height (int): height of rectangle
+            x (int): x-axis position of rectangle
+            y (int): y-axis position of rectangle
+            id (int): identity of rectangle
+        """
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -17,45 +24,57 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Docs"""
+        """Get width of rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Docs"""
+        """Set width of rectangle.
+        Args:
+            value (int): value of width
+        """
         self.integers_validator("width", value)
         self.__width = value
 
     @property
     def height(self):
-        """Docs"""
+        """Get height of rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Docs"""
+        """Set height of rectangle
+        Args:
+            value (int): value of height
+        """
         self.integers_validator("height", value)
         self.__height = value
 
     @property
     def x(self):
-        """Docs"""
+        """Get x position of rectangle"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Docs"""
+        """Set x position of rectangle
+        Args:
+            value (int): value of x
+        """
         self.integers_validator("x", value)
         self.__x = value
 
     @property
     def y(self):
-        """Docs"""
+        """Get y position of rectangle"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Docs"""
+        """Set y position of rectangle
+        Args:
+            y (int): value of y
+        """
         self.integers_validator("y", value)
         self.__y = value
 
@@ -73,11 +92,11 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(name))
 
     def area(self):
-        """Docs"""
+        """Compute the area of rectangle class"""
         return self.__width * self.__height
 
     def display(self):
-        """Docs"""
+        """Display the rectangle class shape"""
         for y in range(self.__y):
             print(" ")
         for row in range(self.__height):
@@ -88,14 +107,21 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """Docs"""
+        """Print rectangle to stdout"""
         print_id = " ("+str(self.id)+") "
         print_pos = str(self.__x)+"/"+str(self.__y)
         print_dim = " - "+str(self.__width)+"/"+str(self.__height)
         return "[{}]".format(type(self).__name__)+print_id+print_pos+print_dim
 
     def help_update(self, id=None, width=None, height=None, x=None, y=None):
-        """Internal method that help update method"""
+        """Internal method that help update method
+        Args:
+            id (int): identity of object
+            width (int): width of rectangle
+            height (int): height of rectangle
+            x (int): x position of rectangle
+            y (int): y position of rectangle
+        """
         if id is not None:
             self.id = id
         if width is not None:
@@ -111,8 +137,8 @@ class Rectangle(Base):
         """Update arguments
 
         Args:
-            *args (non-keyworded): 
-            **kargs (keyworded):
+            *args (non-keyworded): no keyword arguments 
+            **kargs (keyworded): keyword arguments
         """
         if args:
             self.help_update(*args)
