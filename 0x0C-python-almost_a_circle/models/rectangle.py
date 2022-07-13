@@ -86,7 +86,7 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
-        if name=="height" or name=="width" and value <= 0:
+        if name == "height" or name == "width" and value <= 0:
             raise ValueError("{} must be > 0".format(name))
         elif value < 0:
             raise ValueError("{} must be >= 0".format(name))
@@ -101,7 +101,7 @@ class Rectangle(Base):
             print(" ")
         for row in range(self.__height):
             for x in range(self.__x):
-                    print(" ", end="")
+                print(" ", end="")
             for col in range(self.__width):
                 print("#", end="")
             print()
@@ -137,7 +137,7 @@ class Rectangle(Base):
         """Update arguments
 
         Args:
-            *args (non-keyworded): no keyword arguments 
+            *args (non-keyworded): no keyword arguments
             **kargs (keyworded): keyword arguments
         """
         if args:
@@ -147,6 +147,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
-        rectangle_to_dict =  {"x": self.__x, "y": self.__y, "id": self.id, \
-        "height": self.__height, "width": self.__width}
+        rectangle_to_dict = {"x": self.__x, "y": self.__y, "id": self.id, "height": self.__height, "width": self.__width}
         return rectangle_to_dict
