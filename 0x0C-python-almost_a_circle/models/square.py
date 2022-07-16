@@ -8,7 +8,15 @@ class Square(Rectangle):
     """class Square that inherits from Rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Docs"""
+        """
+            Initializing square class
+
+            Args:
+                size: sixe of square
+                x: coordinate x
+                y: coordinate y
+                id: number of objects created
+        """
         super().__init__(size, size, x, y, id)
         self.__size = size
 
@@ -27,8 +35,10 @@ class Square(Rectangle):
         self.__size = value
 
     def __str__(self):
-        return '[{}] ({}) {}/{} - {}' \
-        .format(type(self).__name__, self.id, self.x, self.y, self.__size)
+        pout = '[{}] ({}) {}/{} - {}'
+        idd, xx, yy, siz = self.id, self.x, self.y, self.__size
+
+        return pout.format(type(self).__name__, idd, xx, yy, siz)
 
     def help_update(self, id=None, size=None, x=None, y=None):
         """Internal method that help update method"""
@@ -45,7 +55,7 @@ class Square(Rectangle):
         """Update arguments
 
         Args:
-            *args (non-keyworded): 
+            *args (non-keyworded):
             **kargs (keyworded):
         """
         if args:
@@ -55,5 +65,10 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns the dictionary representation of a square"""
-        square_to_dict =  {"id": self.id, "x": self.x, "size": self.__size, "y": self.y}
+        square_to_dict = dict()
+        square_to_dict['size'] = self.__size
+        square_to_dict['id'] = self.id
+        square_to_dict['x'] = self.x
+        square_to_dict['y'] = self.y
+
         return square_to_dict
