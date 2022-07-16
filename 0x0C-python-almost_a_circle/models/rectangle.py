@@ -33,7 +33,10 @@ class Rectangle(Base):
         Args:
             value (int): value of width
         """
-        self.integers_validator("width", value)
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -47,7 +50,11 @@ class Rectangle(Base):
         Args:
             value (int): value of height
         """
-        self.integers_validator("height", value)
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+
         self.__height = value
 
     @property
@@ -61,7 +68,10 @@ class Rectangle(Base):
         Args:
             value (int): value of x
         """
-        self.integers_validator("x", value)
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -76,26 +86,11 @@ class Rectangle(Base):
         Args:
             y (int): value of y
         """
-        self.integers_validator("y", value)
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
-
-    def integers_validator(self, name, value):
-        """Helper function that validates integers
-            Args:
-                name (str): name of parameter
-                value (int): value of parameter
-            Raises:
-                TypeError: If either of width or height is not an int.
-                ValueError: If either of width or height <= 0.
-                TypeError: If either of x or y is not an int.
-                ValueError: If either of x or y < 0.
-        """
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if name == "height" or name == "width" and value <= 0:
-            raise ValueError("{} must be > 0".format(name))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(name))
 
     def area(self):
         """Compute the area of rectangle class"""
