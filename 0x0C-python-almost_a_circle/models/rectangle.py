@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Rectangle class module"""
+"""Rectangle module"""
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class Rectangle that inherits from Base"""
+    """Rectangle class that inherits from Base"""
 
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None) -> None:
         """Initialize new rectangle
+
         Args:
             width (int): width of rectangle
             height (int): height of rectangle
@@ -107,7 +108,7 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Print rectangle to stdout
         Returns:
             string representation of object
