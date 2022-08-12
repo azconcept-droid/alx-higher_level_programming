@@ -1,2 +1,2 @@
---  This script lists all tables of your MySQL server
-SHOW TABLE;
+--  Lists all tables in MySQL server.
+SHOW TABLES;
