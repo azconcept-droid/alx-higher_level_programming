@@ -1,15 +1,15 @@
 #!/usr/bin/node
-// This script prints the first argument passed to it
+/*
+  This script prints two arguments passed to it
+  in the following format: “ is ”
+*/
 
 const args = process.argv;
 
-let count = 0;
-while (args[count]) {
-  count++;  //count the number of arguments
-}
-
-if (count === 2) {
-  console.log('No argument');
+if (args.length === 2) {
+  console.log('undefined is undefined');
+} else if (args.length === 3) {
+  console.log(`${args[2]} is undefined`);
 } else {
-  console.log(args[2]);
+  console.log(`${args[2]} is ${args[3]}`);
 }
