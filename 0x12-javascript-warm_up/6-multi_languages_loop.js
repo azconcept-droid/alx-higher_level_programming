@@ -5,12 +5,11 @@
 */
 
 const newArr = [
-    'C is fun',
-    'Python is cool',
-    'JavaScript is amazing'
-  ];
-  
-  for (let index = 0; index < newArr.length; index++) {
-    console.log(newArr[index]);
-  }
-  
+  'C is fun',
+  'Python is cool',
+  'JavaScript is amazing'
+];
+
+for (let index = 0; index < newArr.length; index++) {
+  console.log(newArr[index]);
+}

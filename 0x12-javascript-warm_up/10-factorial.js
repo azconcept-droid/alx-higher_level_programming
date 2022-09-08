@@ -5,19 +5,19 @@
 */
 
 function factorial (num) {
-    if (num < 2) {
-      return (1);
-    }
-  
-    return (num * factorial(num - 1));
+  if (num < 2) {
+    return (1);
   }
-  
-  const newArr = process.argv;
-  
-  if (newArr.length === 2) {
-    console.log(1);
-  } else {
-    const firstInt = parseInt(newArr[2]);
-  
-    console.log(factorial(firstInt));
-  }
+
+  return (num * factorial(num - 1));
+}
+
+const newArr = process.argv;
+
+if (newArr.length === 2) {
+  console.log(1);
+} else {
+  const firstInt = parseInt(newArr[2]);
+
+  console.log(factorial(firstInt));
+}
