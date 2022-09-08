@@ -5,7 +5,7 @@ const args = process.argv;
 
 let count = 0;
 while (args[count]) {
-  count++;  //count the number of arguments
+  count++; // count the number of arguments
 }
 
 if (count === 2) {
