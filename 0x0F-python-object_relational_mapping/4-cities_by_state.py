@@ -8,7 +8,7 @@ from sys import argv
 
 if __name__ == "__main__":
     # validate input arguments
-    if len(argv) != 3:
+    if len(argv) != 4:
         print("Usage: ./4-cities_by_state.py user passwd database")
         exit(1)
     # Connecting to database and getting database object
@@ -17,8 +17,9 @@ if __name__ == "__main__":
     # Creating a cursor object for multiple connections
     cur = mydb.cursor()
     # Pass command to mysql
-    cur.execute("SELECT * FROM cities \
-                ORDER BY cities.id ASC;")
+    cur.execute("SELECT cities.id, cities.name, states.name \
+                FROM cities \
+                JOIN states ON cities.state_id=states.id;")
     # Fetch all results of executed queries
     rows = cur.fetchall()
     # Print out each rows line by line
