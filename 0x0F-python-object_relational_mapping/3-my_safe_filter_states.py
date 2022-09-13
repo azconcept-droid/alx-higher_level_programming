@@ -9,8 +9,6 @@ that is safe from MySQL injections!
 import MySQLdb as mysql
 from sys import argv
 
-name = argv[4]
-
 if __name__ == "__main__":
     # Connecting to database and getting database object
     mydb = mysql.connect(host="localhost", port=3306, user=argv[1],
@@ -20,7 +18,7 @@ if __name__ == "__main__":
     # Pass command to mysql
     cur.execute("SELECT * FROM states \
                 WHERE states.name=%(name_state)s\
-                ORDER BY states.id ASC", {"name_state": name})
+                ORDER BY states.id ASC", {"name_state": argv[4]})
     # Fetch all results of executed queries
     rows = cur.fetchall()
     # Print out each rows line by line
