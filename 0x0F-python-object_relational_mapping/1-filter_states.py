@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Creating a cursor object for multiple connections
     cur = mydb.cursor()
     # Pass command to mysql
-    command = cur.execute("SELECT ALL FROM states \
+    command = cur.execute("SELECT * FROM states \
                             WHERE CONVERT(`name` USING Latin1)\
                             COLLATE Latin1_General_CS\
                             LIKE 'N%';")
