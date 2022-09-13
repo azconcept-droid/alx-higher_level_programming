@@ -15,12 +15,12 @@ if __name__ == "__main__":
     # Creating a cursor object for multiple connections
     cur = mydb.cursor()
     # Pass command to mysql
-    command = cur.execute("SELECT * FROM states \
-                            WHERE CONVERT(`name` USING Latin1)\
-                            COLLATE Latin1_General_CS\
-                            LIKE 'N%';")
+    cur.execute("SELECT * FROM states \
+                WHERE CONVERT(`name` USING Latin1) \
+                COLLATE Latin1_General_CS \
+                LIKE 'N%';")
     # Fetch all results of executed queries
-    rows = command.fetchall()
+    rows = cur.fetchall()
     # Print out each rows line by line
     for row in rows:
         print(row)
