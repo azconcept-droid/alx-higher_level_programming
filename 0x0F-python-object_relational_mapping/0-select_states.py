@@ -13,8 +13,8 @@ if __name__ == "__main__":
     # Creating a cursor object for multiple connections
     cur = mydb.cursor()
     # Executing mysql queries
-    cur.execute("SELECT ALL FROM states \
-                ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states \
+                ORDER BY states.id ASC;")
     # Fetch all results of executed queries
     rows = cur.fetchall()
     # Print out each rows line by line
