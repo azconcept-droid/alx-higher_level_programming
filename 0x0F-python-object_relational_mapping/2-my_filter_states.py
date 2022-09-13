@@ -8,8 +8,6 @@ of hbtn_0e_0_usa where name matches the argument.
 import MySQLdb as mysql
 from sys import argv
 
-name = argv[4]
-
 if __name__ == "__main__":
     # Connecting to database and getting database object
     mydb = mysql.connect(host="localhost", port=3306, user=argv[1],
@@ -19,7 +17,7 @@ if __name__ == "__main__":
     # Pass command to mysql
     cur.execute("SELECT * FROM states \
                 WHERE CONVERT(`name` USING Latin1) \
-                COLLATE Latin1_General_CS = '{}';".format(name))
+                COLLATE Latin1_General_CS = '{}';".format(argv[4]))
     # Fetch all results of executed queries
     rows = cur.fetchall()
     # Print out each rows line by line
