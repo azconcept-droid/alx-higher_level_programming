@@ -19,8 +19,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     # Creating a Session
     Session = sessionmaker(bind=engine)
+    session = Session()
     # Quering the the state table
-    state_obj = Session.query(State).order_by(State.id).all()
+    state_obj = session.query(State).order_by(State.id).all()
 
     for instance in state_obj:
         print('{}: {}'.format(instance.id, instance.name))
