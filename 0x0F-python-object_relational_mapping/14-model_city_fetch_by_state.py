@@ -21,11 +21,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     # Quering the the state table
-    state_obj = session.query(State).order_by(State.id)
-    city_obj = session.query(City).order_by(City.id).all()
+    states_cities_obj = session.query(
+        State, City
+        ).filter_by(State.id == City.state_id).all()
 
-    for instance in state_obj:
-        print('{}: {}'.format(instance.id, instance.name))
+    for state, city in states_cities_obj:
+        print('{}: ({}) {}'.format(state.name, city.id, city.name))
 
     # commits the transactions so far
     session.commit()
