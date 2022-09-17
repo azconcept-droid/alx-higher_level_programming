@@ -20,10 +20,11 @@ if __name__ == "__main__":
     # Creating a Session
     Session = sessionmaker(bind=engine)
     session = Session()
-    # Quering the the state table
+    # Quering the the state table use of join
+    # it automatically joins mapped classes with foreign keys
     states_cities_obj = session.query(
         State, City
-        ).filter_by(State.id == City.state_id).all()
+        ).filter(State.id == City.state_id).all()
 
     for state, city in states_cities_obj:
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
