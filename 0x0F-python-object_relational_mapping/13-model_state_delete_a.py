@@ -23,7 +23,7 @@ if __name__ == "__main__":
     session = Session()
 
     # get objects to be deleted & filter using regex
-    objs= session.query(State).filter(State.name.like('%a%')) \
+    objs = session.query(State).filter(State.name.like('%a%')) \
         .order_by(State.id)
 
     # Deleting the object
