@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     # validate input arguments
     if len(argv) != 4:
-        print("Usage: ./7-model_state_fetch_all.py user passwd database")
+        print("Usage: ./14-model_city_fetch_by_state.py user passwd database")
         exit(1)
     # To connect we use create_engine()
     engine = create_engine('mysql+mysqldb://{}:{}\
