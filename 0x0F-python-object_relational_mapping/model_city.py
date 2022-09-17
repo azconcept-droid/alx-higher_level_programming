@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This module defines a class City"""
+"""
+Declarative mapper module
+"""
 
 from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -7,7 +9,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 class City(Base):
     """
-    City table class
+    Declarative mapping for `cities` table
     """
     __tablename__ = 'cities'
 
