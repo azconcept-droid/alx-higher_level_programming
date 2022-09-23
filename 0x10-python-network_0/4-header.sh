@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script that OPTIONS request.
-curl -s "$1" -H "X-School-User-Id = 98"
+curl -s -H "X-School-User-Id = 98" http://"$1"
