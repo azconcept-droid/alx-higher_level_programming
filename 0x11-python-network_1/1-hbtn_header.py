@@ -11,6 +11,5 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen(url) as r:
-        value = r.getheaders()
-    value_dict = dict(value)
-    print(value_dict['X-Request-Id'])
+        value = r.getheader('X-Request-Id')
+    print(value)
