@@ -2,7 +2,7 @@
 """
 This script fetches https://alx-intranet.hbtn.io/status
 """
-import urllib
+import urllib.request
 
 
 if __name__ == "__main__":
@@ -12,4 +12,4 @@ if __name__ == "__main__":
     print('Body response:\n',
           '{} type: {}\n'.format('-', type(html)),
           '{} content: {}\n'.format('-', html),
-          '{} utf8 content: {}'.format('-', r.msg))
+          '{} utf8 content: {}'.format('-', r.reason))
