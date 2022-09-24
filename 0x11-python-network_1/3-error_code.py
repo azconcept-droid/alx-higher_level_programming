@@ -1,14 +1,21 @@
 #!/usr/bin/python3
 """
-This script takes in a URL and an email,
-sends a POST request to the passed URL with the email as a parameter
-displays the body of the response(decoded in utf-8)
+This script takes in a URL, sends a request to the URL and
+displays the body of the response (decoded in utf-8).
+I manage urllib.error.HTTPError exceptions
 """
 import urllib.request
+import urllib.error
 import sys
 
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    with urllib.request.post(url, data={'email': sys.argv[2]}) as r:
-        print('Your email is: {}'.format(r.getheader('email')))
+    req = urllib.request.Request(url)
+    try:
+        with urllib.request.urlopen(req) as r:
+            response = r.read()
+    except urllib.error.HTTPError as e:
+        print('Error code:', e.code)
+    else:
+        print(response.decode('utf-8'))
