@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script that returns status code
-curl -o /dev/null -s -w "%{html_code}" http://"$1" 
+curl -o /dev/null -s -w "%{http_code}" http://"$1" 
