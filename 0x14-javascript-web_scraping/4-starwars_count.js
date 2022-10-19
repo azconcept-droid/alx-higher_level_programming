@@ -10,6 +10,15 @@ request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
-    console.log(JSON.parse(body).results);
-  }
+    let count = 0;
+    const results = JSON.parse(body).results;
+    for (const artists of results) {
+      for (const endpoints of artists.characters) {
+        if (endpoints.includes(18)) {
+          count++;
+        }
+      }
+    }
+    console.log(count);
+    }
 });
