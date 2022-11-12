@@ -6,12 +6,12 @@
  *
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
-int check_cycle(listint_t *list __attribute__((unused)))
+int check_cycle(listint_t *list)
 {
 	listint_t *cat;
 	listint_t *rat;
 
-	if (!list || !list->next)
+	if (!list)
 		return (0);
 	rat = list;
 	cat = list;
