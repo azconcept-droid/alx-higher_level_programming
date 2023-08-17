@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script that OPTIONS request.
-curl -s "$1" -X OPTIONS
+# This script displays all HTTP methods a server will accept.
+curl -isLX OPTIONS "$1" | awk '/OPTIONS/ {print $2, $3, $4}'
