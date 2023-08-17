@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script displays the body of the response.
-curl --location "$1" 
+curl -sL "$1" -X GET
