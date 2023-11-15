@@ -5,15 +5,11 @@
  */
 
 const args = process.argv;
-let convInt;
 
-if (args.length === 2) {
-  console.log('Not a number');
+let convInt = parseInt(args[2]);
+
+if (convInt) {
+  console.log(`My number: ${convInt}`);
 } else {
-  convInt = parseInt(args[2]);
-  if (convInt) {
-    console.log(`My number: ${convInt}`);
-  } else {
     console.log('Not a number');
-  }
 }
