@@ -4,17 +4,15 @@
   Where x is the first argument of the script
 */
 
-const newArr = process.argv;
-let newInt;
+const inputArgs = process.argv;
 
-if (newArr.length === 2) {
-  console.log('Missing number of occurrences');
-} else {
-  newInt = parseInt(newArr[2]);
-  if (newInt) {
-    while (newInt > 0) {
-      console.log('C is fun');
-      newInt--;
-    }
+const x = parseInt(inputArgs[2]);
+
+if (inputArgs.length === 2) { console.log('Missing number of occurrences'); }
+
+if (x) {
+  for (let i = 0; i < x; i++) {
+    console.log('C is fun');
   }
 }
+  
