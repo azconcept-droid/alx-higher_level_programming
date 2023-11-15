@@ -4,12 +4,15 @@
   by using an array of string and a loop
 */
 
-const newArr = [
+const sweetSentences = [
   'C is fun',
   'Python is cool',
   'JavaScript is amazing'
 ];
 
-for (let index = 0; index < newArr.length; index++) {
-  console.log(newArr[index]);
+let i = 0;
+
+while (sweetSentences[i]) {
+  console.log(sweetSentences[i]);
+  i++;
 }
