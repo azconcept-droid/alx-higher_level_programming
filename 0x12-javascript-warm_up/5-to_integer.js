@@ -8,8 +8,4 @@ const args = process.argv;
 
 let convInt = parseInt(args[2]);
 
-if (convInt) {
-  console.log(`My number: ${convInt}`);
-} else {
-    console.log('Not a number');
-}
+if (convInt) { console.log(`My number: ${convInt}`); } else { console.log('Not a number'); }
