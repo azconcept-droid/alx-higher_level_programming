@@ -3,6 +3,6 @@
  * This function returns addition of 2 integers
  */
 
-exports.add = function(x, y) {
-  return x + y
+exports.add = function (x, y) {
+  return x + y;
 }
