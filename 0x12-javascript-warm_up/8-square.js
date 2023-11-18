@@ -4,22 +4,18 @@
   Where x is the first argument of the script
 */
 
-const newArr = process.argv;
+const inputArgs = process.argv;
 
-if (newArr.length === 2) {
-  console.log('Missing size');
-} else {
-  const newInt = parseInt(newArr[2]);
+const squareSize = parseInt(inputArgs[2])
 
-  if (newInt) {
-    for (let i = 0; i < newInt; i++) {
-      let squareContent = '';
-      for (let j = 0; j < newInt; j++) {
-        squareContent += 'X';
+if (squareSize) {
+    for (let row = 0; row < squareSize; row++) {
+      let printX = '';
+      for (let col = 0; col < squareSize; col++) {
+        printX += 'X';
       }
-      console.log(squareContent);
+      console.log(printX);
     }
-  } else {
+} else {
     console.log('Missing size');
-  }
 }
