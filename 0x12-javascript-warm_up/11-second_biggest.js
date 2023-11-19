@@ -4,18 +4,15 @@
   integer in the list of arguments
 */
 
-// remove args 0 and 1
-const newArr = process.argv.slice(2);
+const argsList = process.argv;
 
-const integers = newArr.filter(arg => !isNaN(arg));
-const numbers = integers.map(arg => parseInt(arg)); // convert args to int
+if (numList.length === 2 || numList.length === 3) {
+  console.log(0);
+} else {
+  // Slice out 1st two elements
+  let numList = argsList.slice(2);
+  // Sort in descending order
+  let sortedNumbers = numList.sort((a, b) => b - a);
 
-let largest = 0;
-if (numbers.length > 1) {
-  largest = Math.max(...numbers); // get max value
-
-  numbers.splice(numbers.indexOf(largest), 1);
-  largest = Math.max(...numbers);
+  console.log(sortedNumbers[1])
 }
-
-console.log(largest);
