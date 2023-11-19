@@ -6,7 +6,7 @@
 
 const argsList = process.argv;
 
-if (numList.length === 2 || numList.length === 3) {
+if (argsList.length === 2 || argsList.length === 3) {
   console.log(0);
 } else {
   // Slice out 1st two elements
