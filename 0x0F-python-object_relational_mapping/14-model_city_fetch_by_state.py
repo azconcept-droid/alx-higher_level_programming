@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+This module fetch cities by state
 """
 
 from sys import argv
