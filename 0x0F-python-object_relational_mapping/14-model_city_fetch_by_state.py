@@ -5,6 +5,7 @@ This module fetch cities by state
 
 from sys import argv
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
