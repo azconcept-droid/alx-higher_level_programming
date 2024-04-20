@@ -12,6 +12,12 @@ sudo apt-get update
 sudo apt-get install python3.8-venv
 ```
 
+**OR**
+
+```
+sudo apt install python3.10-venv
+```
+
 ```
 python3 -m venv venv
 ```
