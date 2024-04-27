@@ -9,6 +9,9 @@ import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    with urllib.request.post(url, data={'email': sys.argv[2]}) as r:
-        print('Your email is: {}'.format(r.getheader('email')))
+    if len(sys.argv) == 1:
+        print('No result')
+    # print(len(sys.argv))
+    # letter = sys.argv[1]
+    # with urllib.request.post(url, data={'email': sys.argv[2]}) as r:
+    #     print('Your email is: {}'.format(r.getheader('email')))
