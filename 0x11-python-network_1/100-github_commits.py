@@ -1,14 +1,24 @@
 #!/usr/bin/python3
 """
-This script takes in a URL and an email,
-sends a POST request to the passed URL with the email as a parameter
-displays the body of the response(decoded in utf-8)
+Please list 10 commits (from the most recent to oldest)
+of the repository “rails” by the user “rails”
+Print all commits by: `<sha>: <author name>` (one by line)
+Use: GitHub API,
+here is the documentation https://developer.github.com/v3/repos/commits/
 """
-import urllib.request
+import requests
 import sys
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    with urllib.request.post(url, data={'email': sys.argv[2]}) as r:
-        print('Your email is: {}'.format(r.getheader('email')))
+    user = sys.argv[2]
+    repo = sys.argv[1]
+    url = 'https://api.github.com/repos/' + user + '/' + repo + '/commits'
+    password = 'github_pat_'
+    username = 'azconcept-droid'
+
+    res = requests.get(url, auth=(username, password))
+    json = res.json()
+    for i in range(0, 10):
+        author = json[i]['commit']['author']['name']
+        print('{}: {}'.format(json[i]['sha'], author))
