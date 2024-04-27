@@ -14,10 +14,8 @@ if __name__ == "__main__":
     user = sys.argv[2]
     repo = sys.argv[1]
     url = 'https://api.github.com/repos/' + user + '/' + repo + '/commits'
-    password = 'github_pat_'
-    username = 'azconcept-droid'
 
-    res = requests.get(url, auth=(username, password))
+    res = requests.get(url)
     json = res.json()
     for i in range(0, 10):
         author = json[i]['commit']['author']['name']
