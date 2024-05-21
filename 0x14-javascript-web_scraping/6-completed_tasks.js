@@ -10,20 +10,27 @@ request(url, function (err, response, body) {
     console.log(err);
   } else {
     let count = 0;
-    console.log('{ ');
-    for (let i = 0; i <= 10; i++) {
-      for (const user of JSON.parse(body)) {
-        if (user.userId === i) {
-          if (user.completed === true) {
-            count++;
-          }
-        }
+    users = JSON.parse(body);
+    for (const user of users) {
+      if (user["completed"] == true) {
+        count++;
       }
-      if (count !== 0) {
-        console.log(`  '${i}': ${count},`);
-      }
-      count = 0;
     }
-    console.log('}');
+    console.log(count);
   }
-});
+})
+  //   for (let i = 0; i <= 10; i++) {
+  //     for (const user of JSON.parse(body)) {
+  //       if (user.userId === i) {
+  //         if (user.completed === true) {
+  //           count++;
+  //         }
+  //       }
+  //     }
+  //     if (count !== 0) {
+  //       console.log(`  '${i}': ${count},`);
+  //     }
+  //     count = 0;
+  //   }
+  //   console.log('}');
+  // }
