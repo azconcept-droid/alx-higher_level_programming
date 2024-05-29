@@ -6,3 +6,4 @@
 - [jquery api docs](https://api.jquery.com/)
 - [jquery youtube playlist](https://www.youtube.com/watch?v=fEYx8dQr_cQ)
 - [jquery ajax](https://learn.jquery.com/ajax/)
+- [jquery quick api reference](https://oscarotero.com/jquery/)
