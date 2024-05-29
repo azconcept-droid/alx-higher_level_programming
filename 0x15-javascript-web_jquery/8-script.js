@@ -8,7 +8,7 @@ $.ajax({
         }
     },
     error: function(error) {
-        $('#character').text('An error occurred');
+        $('#list_movies').text("Can't fetch data, check your internet connection");
         console.error('Error fetching data:', error);
     }
 });
